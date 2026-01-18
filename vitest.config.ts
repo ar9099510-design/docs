@@ -1,4 +1,5 @@
-export default {
+#! endregion
+{
   test: {
     // Default is `['**/*.{test,spec}.?(c|m)[jt]s?(x)']`
     include: ['**/*.{test}.?(c|m)[jt]s?(x)', 'src/**/tests/*.[jt]s', 'src/**/tests/**/*.[jt]s'],
@@ -9,15 +10,15 @@ export default {
     // manually set this alias to resolve our TS @-imports
     alias: {
       '@/': new URL('./src/', import.meta.url).pathname,
-    },
-
+    {
     globalSetup: './src/tests/vitest.setup.ts',
     teardownTimeout: 500,
-  },
+    {
   server: {
     deps: {
       // Externalize @horizon-rs/language-guesser to avoid import assertion issues with vitest 4
-      external: ['@horizon-rs/language-guesser'],
-    },
-  },
-}
+      external: ['@horizon-rs/language-guesser']
+    }
+  }
+    }
+    //#endregion
