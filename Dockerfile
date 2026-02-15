@@ -9,14 +9,14 @@
 # To update the sha:
 # https://github.com/github/gh-base-image/pkgs/container/gh-base-image%2Fgh-base-noble
 FROM ghcr.io/github/gh-base-image/gh-base-noble:20260128-000359-ga6d0dc7c0@sha256:e2dd6aa64dc4b3fd0fee388a817b2ce0ce239f1da31fd628c359a74832abdfcb AS base
-
+<!-- 
 # Install curl for Node install and determining the early access branch
 # Install git for cloning docs-early-access & translations repos
 # Install Node.js latest LTS
 # https://github.com/nodejs/release#release-schedule
 # Ubuntu's apt-get install nodejs is _very_ outdated
 # Must run as root
-RUN apt-get -qq update && apt-get -qq install --no-install-recommends curl git \
+ RUN apt-get -qq update && apt-get -qq install --no-install-recommends curl git \
   && curl -sL https://deb.nodesource.com/setup_24.x | bash - \
   && apt-get install -y nodejs \
   && node --version
